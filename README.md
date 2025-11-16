@@ -58,24 +58,29 @@ A high-level overview of the project organization:
 big-data-analysis-7.6-million-cern-collisions/
 │
 ├── Original Spreadsheets Data/
-│ └── order_items.csv 
+│ └──  order_items.csv 
 │    - order_item_refunds.csv
 │    - website_sessions.csv
 │    - website_pageviews.csv
 │
-├── Codes/
-│ └── The core analysis scripts and notebooks.
-│    - zboson_mass_analysis.ipynb: Main Python script for Z boson mass 
+├── SQL scripts/
+│ └──  Master Script.sql   # This is the master script that contains everything (creating schemas, tables, views, procedures, triggers, and sample queries)
+│    - schema.sql    # Script for creating the database tables
+|    - views.sql     # Script for creating Views for analytics and reporting
+|    - procedures.sql   # Script for creating stored procedure for automation
+|    - triggers.sql    # Script for creating triggers
+|    - sample-queries.sql   # Example SELECT queries for analysis
+|
 │
-├── Results_Plots/
-│ └── Final publication-quality figures output by the scripts.
-│    - Invariant mass distributions with fitted curves
-│    - Momentum and pseudorapidity distributions
-│    - χ² analysis results
+├── EER diagrams and documentation/
+│ └──  NovaCart Retail EER diagram.png
+│    - NovaCart Retail EER diagram model.mwb
+│    - Security Advisory Article to Stackholders.pdf
+│    
 │
-├── Reports/
-│   └── Project documentation and technical report
-│       - Report.pdf
+├── Backups/
+│   └── NovaCart Retail mysql-dump batabase backup.sql # A SQL script that recreates the whole database
+│       
 |
 └── README.md
 ```
