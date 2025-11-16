@@ -76,7 +76,7 @@ big-data-analysis-7.6-million-cern-collisions/
 │ └──  NovaCart Retail EER diagram.png
 │    - NovaCart Retail EER diagram model.mwb
 │    - Security Advisory Article to Stackholders.pdf
-│    
+│    - Risks of Data Loss Advisory Article to Stackholders.pdf
 │
 ├── Backups/
 │   └── NovaCart Retail mysql-dump batabase backup.sql # A SQL script that recreates the whole database
