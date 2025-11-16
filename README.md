@@ -18,7 +18,7 @@ I successfully created a **full relational database** for NovaCart Retail by mig
 The database design, relationships, and normalization are illustrated in the EER diagram below:
 
 <div align="center">
-  <img src="https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/EER%20diagrams/NovaCart%20Retail%20EER%20diagram.png" width="550" alt="NovaCart Retail EER Diagram">
+  <img src="https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/EER%20diagrams%20and%20documentation/NovaCart%20Retail%20EER%20diagram.png" width="550" alt="NovaCart Retail EER Diagram">
   
 *Figure 1: EER diagram showing the relational database schema for NovaCart Retail.*
 </div>
@@ -63,13 +63,14 @@ big-data-analysis-7.6-million-cern-collisions/
 │    - website_sessions.csv
 │    - website_pageviews.csv
 │
+|
 ├── SQL scripts/
-│ └──  Master Script.sql   # This is the master script that contains everything (creating schemas, tables, views, procedures, triggers, and sample queries)
-│    - schema.sql    # Script for creating the database tables
-|    - views.sql     # Script for creating Views for analytics and reporting
-|    - procedures.sql   # Script for creating stored procedure for automation
-|    - triggers.sql    # Script for creating triggers
-|    - sample-queries.sql   # Example SELECT queries for analysis
+│ └──  Master Script.sql   # This is the master script that contains everything (creating schemas, tables, views, procedures, triggers, inserting records, altering tables, and queries)
+│    - Schemas.sql    # Script for creating the database schema & tables
+|    - Views.sql     # Script for creating Views for analytics and reporting
+|    - Procedures.sql   # Script for creating stored procedures for automation
+|    - Triggers.sql    # Script for creating triggers
+|    
 |
 │
 ├── EER diagrams and documentation/
