@@ -132,9 +132,8 @@ After creating database and the tables, the companies's Original Spreadsheet Dat
 
 To automate tasks and prepare for future analytics of the data, the following were created:
 
-- **Stored Procedures:** These helped in storing long queries in short queries such that even people who don't have much SQL knowledge can query the database. The stored porcedure that i created, one was to track monthly sales and revenue and the second procedure tracked the performance of the companies chat representatives.
-      The SQL scipt used to create the procedures is the `Procedures.sql` script [**(View Script)**](https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20scripts/Procedures.sql)
-      The `CREATE PROCEDURE` statement was used to create these erocedure, shown in the screenshots below
+- **Stored Procedures:** These helped in storing long queries in short queries such that even people who don't have much SQL knowledge can query the database. The stored porcedure that i created, one was to track monthly sales and revenue and the second procedure tracked the performance of the companies chat representatives. 
+      The `CREATE PROCEDURE` statement was used to create these erocedure, and the query is detailed on the SQL scriptt `Procedures.sql` script [**(View Script)**](https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20scripts/Procedures.sql),a section of the script query shown in the screenshots below:
   
   <div align="center">
   <img src="https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20Scripts%20Screenshorts/Creating%20Procedure.png" alt="Creating Procedure Query Screenshot">
@@ -143,19 +142,60 @@ To automate tasks and prepare for future analytics of the data, the following we
 </div>
 
   
-- **Triggers:** Automatically update stock quantities after orders are placed  
-- **Views:** Pre-aggregated data for analytics and reporting dashboards
+- **Triggers:** This helped to Automatically update stock quantities after orders are placed.
+  The trigger was created using the `CREATE TRIGGER` stamenment detailed in this SQL script `Triggers.sql` [**(View Script)**](https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20scripts/Triggers.sql), a screenshot of the query from the script is shown below:
 
 <div align="center">
-  <img src="https://github.com/ValenLebepe/.../views-sample.png" width="550" alt="Sample View">
+  <img src="https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20Scripts%20Screenshorts/Creating%20Trigger.png" alt="Creating Trigger Query Screenshot">
   
-*Figure 4: Example of a view created for reporting analytics.*
+*Figure 2: proper caption here*
 </div>
 
 
+  
+- **Views:** Pre-aggregated data for analytics and reporting dashboards, this alos helps to protect the raw database data from loss or missuse. I created three views, one to track the monthly company perfomance, the other to track the monthly website traffic, and the third one to track the website session in january and february.
+  To create the the `CREATE VIEW ` statement was used, and is detailed in the script `Views.sql` [**(View Script)**](https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20scripts/Views.sql), a a screenshot of the query from the script is shown below:
+
+<div align="center">
+  <img src="https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20Scripts%20Screenshorts/Creating%20Views.png" alt="Creating View Query Screenshot">
+  
+*Figure 4: proper caption.*
+</div>
 
 
+## 🔐 Backups & Security
 
+To protect company data I:
+
+- I enforced Access control with user roles and permissions
+  
+- I created the companies Full database backups were using MySQL dump (this is done on the UI) which is a type of logical backup that generates a sql sript tht when you run it it creates/recreates/produces the full database. See the back up script I for the company that was produced my the mySQL dump (`NovaCart Retail mysql-dump database backup.sql`) [**(See Backup Script)**](https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/Backups/NovaCart%20Retail%20mysql-dump%20batabase%20backup.sql)
+  Below is a screenshot of a portion of the logical backup script (`NovaCart Retail mysql-dump database backup.sql`):
+
+<div align="center">
+  <img src="https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20Scripts%20Screenshorts/MySQL%20dump%20backup.png" alt="MySQL Dump Script Screenshot">
+  
+*Figure 4: proper caption.*
+</div>
+  
+- I wrote Advisory articles written for stakeholders on security and data loss mitigation. See the [**Risks of Data Loss Advisory Article**](https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/EER%20diagrams%20and%20documentation/Risks%20of%20Data%20Loss%20Advisory%20Article%20to%20Stackholders.pdf)  and the [**Security Advisory Article**](https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/EER%20diagrams%20and%20documentation/Security%20Advisory%20Article%20to%20Stackholders.pdf)
+
+<div align="left">
+  <img src="https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20Scripts%20Screenshorts/Data%20Loss%20Risks%20and%20Mitigation%20Strategies.png" alt="Data Loss Article Screenshot">
+  
+*Figure 4: proper caption.*
+</div>
+
+<div align="right">
+  <img src="https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20Scripts%20Screenshorts/Creating%20a%20Comprehensive%20Security%20Plan%20for%20the%20Company.png" alt="Security Plan Article Screenshot">
+  
+*Figure 4: proper caption.*
+</div>
+
+(I want these articles pictures to be side by side)
+
+
+technnical implementations and everythimg!!
 
 
 
