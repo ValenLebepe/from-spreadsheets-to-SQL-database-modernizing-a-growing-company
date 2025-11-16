@@ -14,13 +14,15 @@ I was hired as their **Database Administrator (DBA) and Data Analyst** to migrat
 
 ## 📊 Key Results
 
-I was able to create a full relational database for tho company from its spreadsheest, shown below in from the EER diagrsm
+I successfully created a **full relational database** for NovaCart Retail by migrating all operational data from spreadsheets into a structured MySQL database.  
+The database design, relationships, and normalization are illustrated in the EER diagram below:
 
 <div align="center">
-  <img src="https://github.com/ValenLebepe/siyakha-rural-women-digital-empowerment/blob/main/showcase-materials/appliation-preview.gif" width="230" alt="Siyakha Platform Demo">
+  <img src="https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/EER%20diagrams/NovaCart%20Retail%20EER%20diagram.png" width="550" alt="NovaCart Retail EER Diagram">
   
-*Figure 1: caption here.*
+*Figure 1: EER diagram showing the relational database schema for NovaCart Retail.*
 </div>
+
 
 
 ## 🧑‍💼 Roles & Responsibilities
@@ -48,6 +50,35 @@ In this repository, I take you on the journey where I moved the company from **s
 - **Implementing security and creating backups**  
 - **Creating views and stored procedures** to prepare for future advanced analytics and reporting  
 - **Writing advisory articles and documentation for stakeholders**
+
+### 📁 Repository Structure
+
+A high-level overview of the project organization:
+```
+big-data-analysis-7.6-million-cern-collisions/
+│
+├── Original Spreadsheets Data/
+│ └── order_items.csv 
+│    - order_item_refunds.csv
+│    - website_sessions.csv
+│    - website_pageviews.csv
+│
+├── Codes/
+│ └── The core analysis scripts and notebooks.
+│    - zboson_mass_analysis.ipynb: Main Python script for Z boson mass 
+│
+├── Results_Plots/
+│ └── Final publication-quality figures output by the scripts.
+│    - Invariant mass distributions with fitted curves
+│    - Momentum and pseudorapidity distributions
+│    - χ² analysis results
+│
+├── Reports/
+│   └── Project documentation and technical report
+│       - Report.pdf
+|
+└── README.md
+```
 
 
 
