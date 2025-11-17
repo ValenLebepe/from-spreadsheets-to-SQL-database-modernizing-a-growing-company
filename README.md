@@ -195,7 +195,177 @@ To protect company data I:
 (I want these articles pictures to be side by side)
 
 
-technnical implementations and everythimg!!
+# 🏗️ Database Structure, Automation & Security
+
+## 1️⃣ Designing the Database Schema
+
+Before creating the individual tables, I first designed a dedicated schema to store the entire system; including all tables, views, triggers, stored procedures, and backups.
+
+The schema was created in MySQL Workbench using the `CREATE SCHEMA` statement:
+
+<div align="center">
+  <img src="https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20Scripts%20Screenshorts/Creating%20schema.png" width="950">
+  
+  **Figure 2:** Creating the database schema for NovaCart Retail.
+
+</div>
+
+Once the schema was initialized, I designed all tables using **fully normalized relational database principles**.  
+The key tables included:
+- `orders`
+- `order_item_refund`
+- `products`
+- `order_summary`
+- `website_sessions`
+- `website_pageviews`
+- `chat_support`
+
+<div align="center">
+  <img src="https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/EER%20diagrams%20and%20documentation/NovaCart%20Retail%20EER%20diagram.png" width="550">
+
+  **Figure 3:** Full EER diagram showing table relationships.
+
+</div>
+
+The tables were created using `CREATE TABLE` statements inside `Schemas.sql`:
+
+<div align="center">
+  <img src="https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20Scripts%20Screenshorts/Creating%20Tables.png">
+
+**Figure 4:** Examples of SQL queries used for table creation.
+
+</div>
+
+
+🔗 **View Script:** [`Schemas.sql`](https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20scripts/Schemas.sql)
+
+
+
+## 2️⃣ Migrating Original Company Data
+
+After creating the database tables, I imported the company’s spreadsheet data using MySQL Workbench’s **Table Data Import Wizard**.
+
+The data was already pre-cleaned, so it only needed to be mapped to the correct tables.
+
+🔗 **View Original Datasets:**
+📂 [**Original Spreadsheets Data**](https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/tree/main/Original%20Spreadsheets%20Data)
+
+
+
+## 3️⃣ Automating Analytics and Operations
+
+To make the system useful for business analytics and operational reporting, I implemented:
+
+
+### 🟢 Stored Procedures
+
+Stored procedures were created to simplify repeated analysis tasks so that even non-technical staff could run them.
+
+I built two main procedures:
+
+1. **Monthly sales & revenue performance**
+2. **Chat representative performance tracking**
+
+<div align="center">
+  <img src="https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20Scripts%20Screenshorts/Creating%20Procedure.png">
+
+**Figure 5:** One of the stored procedure query from `Procedures.sql`.
+
+</div>
+
+
+🔗 **View Script:** [`Procedures.sql`](https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20scripts/Procedures.sql)
+
+
+
+### 🟡 Triggers
+
+To automate inventory updates, I created a trigger that **automatically adjusts stock levels** whenever an order is placed.
+
+<div align="center">
+  <img src="https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20Scripts%20Screenshorts/Creating%20Trigger.png">
+
+  **Figure 6:** Stock control trigger implementation.
+
+</div>
+
+
+🔗 **View Script:** [`Triggers.sql`](https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20scripts/Triggers.sql)
+
+
+
+### 🔵 Views
+
+To support analytics dashboards and reporting tools, I created three views:
+
+| View Name | Purpose |
+|-----------|---------|
+| Monthly Performance View | Tracks sales & revenue trends |
+| Website Traffic View | Monitors changes in incoming traffic |
+| Jan-Feb Session View | Focused analysis of early-year web activity |
+
+<p align="center">
+  <img src="https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20Scripts%20Screenshorts/Creating%20Views.png">
+</p>
+
+**Figure 7:** SQL used to create analytics views.
+
+🔗 **View Script:** [`Views.sql`](https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20scripts/Views.sql)
+
+
+
+## 4️⃣ Database Security & Backups
+
+To ensure long-term protection of company data, I implemented:
+
+### 🔐 Access Control  
+Role-based permissions for admins, analysts, and developers.
+
+
+### 💾 Automated Logical Backups
+
+I generated a full logical backup using MySQL Workbench’s export tool (`mysqldump`).  
+This produces a script that can fully rebuild the database on any MySQL server.
+
+<div align="center">
+  <img src="https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20Scripts%20Screenshorts/MySQL%20dump%20backup.png">
+
+**Figure 8:** Excerpt of exported backup script.
+
+</div>
+
+
+📄 **View Backup File:** [`NovaCart Retail mysql-dump database backup.sql`](https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/Backups/NovaCart%20Retail%20mysql-dump%20batabase%20backup.sql)
+
+
+
+### 🧠 Executive Advisory Reports
+
+To ensure stakeholders understood the importance of database safety, I wrote two advisory articles:
+
+- 🔒 **Creating a Comprehensive Security Plan for the Company**  
+- 🛑 **Data Loss Risk & Mitigation Strategies**
+
+| Security Advisory | Risk Mitigation Advisory |
+|------------------|--------------------------|
+| ![](https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20Scripts%20Screenshorts/Creating%20a%20Comprehensive%20Security%20Plan%20for%20the%20Company.png) | ![](https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20Scripts%20Screenshorts/Data%20Loss%20Risks%20and%20Mitigation%20Strategies.png) |
+
+**Figure 9:** Advisory article previews (side-by-side screenshots).
+
+📄 **Both full PDFs are located in:** [`/EER diagrams and documentation/`](https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/tree/main/EER%20diagrams%20and%20documentation)
+
+
+
+## ⭐ Final Outcome
+
+By migrating the business from static spreadsheets to a **fully relational, automated, secure SQL database**, the company now has:
+
+- Centralized and structured data
+- Automated analytics and reporting
+- Built-in data protection and backup capability
+- Executive-level documentation for long-term governance
+
+This project brings the company one step closer to scalable dashboards, predictive analytics, and expanded digital operations.
 
 
 
