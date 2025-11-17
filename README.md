@@ -61,16 +61,13 @@ from-spreadsheets-to-SQL-database-modernizing-a-growing-company/
 │    - order_item_refunds.csv
 │    - website_sessions.csv
 │    - website_pageviews.csv
-│
 |
 ├── SQL scripts/
 │ └──  Master Script.sql   # This is the master script that contains everything (creating schemas, tables, views, procedures, triggers, inserting records, altering tables, and queries)
 │    - Schemas.sql    # Script for creating the database schema & tables
 |    - Views.sql     # Script for creating Views for analytics and reporting
 |    - Procedures.sql   # Script for creating stored procedures for automation
-|    - Triggers.sql    # Script for creating triggers
-|    
-|
+|    - Triggers.sql    # Script for creating triggers    
 │
 ├── EER diagrams and documentation/
 │ └──  NovaCart Retail EER diagram.png
@@ -79,8 +76,7 @@ from-spreadsheets-to-SQL-database-modernizing-a-growing-company/
 │    - Risks of Data Loss Advisory Article to Stackholders.pdf
 │
 ├── Backups/
-│   └── NovaCart Retail mysql-dump batabase backup.sql # A SQL script that recreates the whole database
-│       
+│   └── NovaCart Retail mysql-dump batabase backup.sql   # A SQL script that recreates the whole database      
 |
 └── README.md
 ```
@@ -94,7 +90,7 @@ Before creating the individual tables, I first designed a dedicated schema to st
 The schema was created in MySQL Workbench using the `CREATE SCHEMA` statement:
 
 <div align="center">
-  <img src="https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20Scripts%20Screenshorts/Creating%20schema.png" width="950">
+  <img src="https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20Scripts%20Screenshorts/Creating%20schema.png" width="850">
   
   **Figure 2:** Creating the database schema for NovaCart Retail.
 
@@ -253,6 +249,7 @@ To ensure stakeholders understood the importance of database safety, I wrote two
 📄 **Both full PDFs are located in:** [`/EER diagrams and documentation/`](https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/tree/main/EER%20diagrams%20and%20documentation)
 
 
+---
 
 ## 🏁 Final Outcome & Impact
 
