@@ -43,7 +43,7 @@ My roles & responsibilities in the company include:
 
 ## 📂 Repository Journey
 
-In this repository, I take you on the journey where I moved the company from **spreadsheets to a SQL database**, showing the full process of:  
+In this repository, I take you on a journey where I moved the company from **spreadsheets to a SQL database**, showing the full process of:  
 - **Designing and normalizing the database schema**  
 - **Performing ETL and data migration**  
 - **Implementing security and creating backups**  
