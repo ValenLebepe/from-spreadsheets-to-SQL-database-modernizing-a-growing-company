@@ -313,7 +313,35 @@ The company now has:
 - A foundation for future predictive analytics & BI dashboards
 
 ---
+## 👨‍💻 Skills Demonstrated
+This project demonstrates a combination of advanced technical expertise and business-ready skills, **directly transferable to data analytics, database management, and strategic decision-making**:
 
+- **Database Design & Normalization:** Designed a fully relational, scalable, and normalized database schema to eliminate redundancy and enforce data integrity.  
+- **Advanced SQL (DDL, DML, DCL):** Wrote complex queries, optimized data operations, and implemented fine-grained access control.  
+- **ETL (Extract, Transform, Load) Processes:** Migrated multiple Excel datasets into MySQL with zero data loss and maintained consistency across all tables.  
+- **Stored Procedures, Triggers & Views:** Automated repetitive tasks, enforced business logic, and created analytics-ready views for reporting.  
+- **Data Security & Access Control:** Configured roles and permissions, implemented policies to prevent unauthorized access, and protected sensitive business information.  
+- **Backup & Disaster Recovery:** Built full logical backups and replication strategies to ensure business continuity.  
+- **Data Analytics & Reporting:** Produced actionable insights on revenue, website traffic, and customer support performance using SQL analytics and reporting views.  
+- **Stakeholder Communication & Advisory Reports:** Crafted clear, professional guidance on data security, loss mitigation, and reporting strategy to inform executive decision-making.  
+
+> This project reflects not only technical proficiency but also the ability to translate complex data systems into strategic business value.
+
+## 👨‍💻 View the Main SQL Script
+For insight into the full database setup, including tables, relationships, stored procedures, triggers, views, and sample queries, see the main SQL script: [`Master Script.sql`](./SQL%20scripts/Master%20Script.sql).
+
+
+
+## 📄 License
+**Report:** Copyright © 2025 [Valen Lebepe]. All rights reserved.  
+This project/repo is provided for viewing purposes only. Redistribution, copying, or commercial use is **prohibited without explicit permission**.
+
+## 👤 Author
+
+**Valen Lebepe**  
+- GitHub: [@ValenLebepe](https://github.com/ValenLebepe)
+- LinkedIn: [Valen Lebepe](https://www.linkedin.com/in/valenlebepe)  
+- Email: valenlebepe@gmail.com
 
 
 
