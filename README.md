@@ -20,7 +20,7 @@ The database design, relationships, and normalization are illustrated in the EER
 <div align="center">
   <img src="https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/EER%20diagrams%20and%20documentation/NovaCart%20Retail%20EER%20diagram.png" width="550" alt="NovaCart Retail EER Diagram">
   
-*Figure 1: EER diagram showing the relational database schema for NovaCart Retail.*
+**Figure 1:** EER diagram showing the relational database schema for NovaCart Retail.
 </div>
 
 
@@ -80,7 +80,7 @@ from-spreadsheets-to-SQL-database-modernizing-a-growing-company/
 |
 └── README.md
 ```
-
+---
 # 🏗️ Database Structure, Automation & Security
 
 ## 1️⃣ Designing the Database Schema
@@ -328,7 +328,7 @@ This project demonstrates a combination of advanced technical expertise and busi
 > This project reflects not only technical proficiency but also the ability to translate complex data systems into strategic business value.
 
 ## 👨‍💻 View the Main SQL Script
-For insight into the full database setup, including tables, relationships, stored procedures, triggers, views, and sample queries, see the main SQL script: [`Master Script.sql`](https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20scripts/Master%20Script.sql).
+For insight into the full database setup, including tables, insert statements, relationships, stored procedures, triggers, views, and sample queries, see the main SQL script: [`Master Script.sql`](https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20scripts/Master%20Script.sql).
 
 
 
