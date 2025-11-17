@@ -3,7 +3,7 @@
 **NovaCart Retail** is a rapidly expanding e-commerce startup selling consumer electronics, kids' toys and household products across Southern Africa.
 I was hired as their **Database Administrator (DBA) and Data Analyst** to migrate their data into a scalable MySQL database system, enforce data security and integrity, implement automation, and build the foundation for advanced analytics, reporting, and future BI integration.
 
-**Key Libraries:** `MySQL Server & MySQL Workbench`, `Excel`,`SQL (DDL, DML, DCL)`, `Stored Procedures, Triggers, Scheduled Events`, `EER diagram modelling`
+**Key Libraries:** `MySQL Server & MySQL Workbench`, `Excel`, `SQL (DDL, DML, DCL)`, `Stored Procedures`, `Triggers`, `Scheduled Events`, `EER diagram modelling`
 
 ## 🎯 Project Overview
 
@@ -18,7 +18,7 @@ I successfully created a **full relational database** for NovaCart Retail by mig
 The database design, relationships, and normalization are illustrated in the EER diagram below:
 
 <div align="center">
-  <img src="https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/EER%20diagrams%20and%20documentation/NovaCart%20Retail%20EER%20diagram.png" width="450" alt="NovaCart Retail EER Diagram">
+  <img src="https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/EER%20diagrams%20and%20documentation/NovaCart%20Retail%20EER%20diagram.png" width="550" alt="NovaCart Retail EER Diagram">
   
 *Figure 1: EER diagram showing the relational database schema for NovaCart Retail.*
 </div>
@@ -36,7 +36,6 @@ My roles & responsibilities in the company include:
 - **Creating views** for analytical and reporting use-cases  
 - **Configuring users, roles, and permissions** based on least-privilege security principles  
 - **Setting up data backup strategy**  
-- **Implementing replication architecture** for future failover support  
 - **Conducting exploratory SQL analytics** to derive business insights  
 - **Writing technical documentation and best-practice guidelines** for internal staff  
 - **Advising stakeholders** on long-term data governance and reporting strategy
@@ -48,14 +47,14 @@ In this repository, I take you on the journey where I moved the company from **s
 - **Designing and normalizing the database schema**  
 - **Performing ETL and data migration**  
 - **Implementing security and creating backups**  
-- **Creating views and stored procedures** to prepare for future advanced analytics and reporting  
+- **Creating views, triggers, and stored procedures** to prepare for future advanced analytics and reporting  
 - **Writing advisory articles and documentation for stakeholders**
 
 ### 📁 Repository Structure
 
 A high-level overview of the project organization:
 ```
-big-data-analysis-7.6-million-cern-collisions/
+from-spreadsheets-to-SQL-database-modernizing-a-growing-company/
 │
 ├── Original Spreadsheets Data/
 │ └──  order_items.csv 
