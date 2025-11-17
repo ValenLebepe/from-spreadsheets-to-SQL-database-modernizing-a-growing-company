@@ -328,7 +328,7 @@ This project demonstrates a combination of advanced technical expertise and busi
 > This project reflects not only technical proficiency but also the ability to translate complex data systems into strategic business value.
 
 ## 👨‍💻 View the Main SQL Script
-For insight into the full database setup, including tables, relationships, stored procedures, triggers, views, and sample queries, see the main SQL script: [`Master Script.sql`](./SQL%20scripts/Master%20Script.sql).
+For insight into the full database setup, including tables, relationships, stored procedures, triggers, views, and sample queries, see the main SQL script: [`Master Script.sql`](https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20scripts/Master%20Script.sql).
 
 
 
