@@ -86,115 +86,6 @@ big-data-analysis-7.6-million-cern-collisions/
 └── README.md
 ```
 
-Now to how I actually did my carry out my job.
-
-## 🏗️ Database Schema & Table Creation
-
-Before creating the tables, i fist created the database/schema to house everything (i.e tables, views, triggers, procedures, ...)
-The database which is the same as a schema in MySQL WorkBench was created using the `CREATE SCHEMA` statement, as shown below from a screenshot from the `schema.sql` script:
-<div align="center">
-  <img src="https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20Scripts%20Screenshorts/Creating%20schema.png" alt="Creating Schema Query Screenshot">
-  
-*Figure 2: proper caption here*
-</div>
-
-After creating the schema foolwed the tables that were designed to be fully relational and normalized.  
-Key tables include:
-
-- `orders`
-- `order_item_refund`
-- `products`
-- `customers`
-- `website_sessions`
-- `website_pageviews`
-- `chat_support`
-
-<div align="center">
-  <img src="https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/EER%20diagrams%20and%20documentation/NovaCart%20Retail%20EER%20diagram.png" width="550" alt="NovaCart Retail EER Diagram">
-  
-*Figure 2: EER diagram showing the different tables in the database for NovaCart Retail.*
-</div>
-
-To create these tables the `CREATE TABLE` statement was used as shown below from a screenshot from the `schemas.sql` srcipt:
-<div align="center">
-  <img src="https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20Scripts%20Screenshorts/Creating%20Tables.png" alt="Creating Tables Query Screenshot">
-  
-*Figure 2: proper caption here*
-</div>
-
-
-- `Schemas.sql` → This is the script which is an excerpt from the `Master Script.sql` , it was used to create the schema and all its tables and defined relationships [**View the Script**](https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20scripts/Schemas.sql)
-
-After creating database and the tables, the companies's Original Spreadsheet Data [**(See data)**](https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/tree/main/Original%20Spreadsheets%20Data) were import to the their corresponidng tables using the `Table Data Import Wizard` in MySQL Workbench. The original data was already cleaned when i got them and juat waiting to be migrated to MySQL Database.
-
-
-## ⚙️ Stored Procedures, Triggers, and Views
-
-To automate tasks and prepare for future analytics of the data, the following were created:
-
-- **Stored Procedures:** These helped in storing long queries in short queries such that even people who don't have much SQL knowledge can query the database. The stored porcedure that i created, one was to track monthly sales and revenue and the second procedure tracked the performance of the companies chat representatives. 
-      The `CREATE PROCEDURE` statement was used to create these erocedure, and the query is detailed on the SQL scriptt `Procedures.sql` script [**(View Script)**](https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20scripts/Procedures.sql),a section of the script query shown in the screenshots below:
-  
-  <div align="center">
-  <img src="https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20Scripts%20Screenshorts/Creating%20Procedure.png" alt="Creating Procedure Query Screenshot">
-  
-*Figure 2: proper caption here*
-</div>
-
-  
-- **Triggers:** This helped to Automatically update stock quantities after orders are placed.
-  The trigger was created using the `CREATE TRIGGER` stamenment detailed in this SQL script `Triggers.sql` [**(View Script)**](https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20scripts/Triggers.sql), a screenshot of the query from the script is shown below:
-
-<div align="center">
-  <img src="https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20Scripts%20Screenshorts/Creating%20Trigger.png" alt="Creating Trigger Query Screenshot">
-  
-*Figure 2: proper caption here*
-</div>
-
-
-  
-- **Views:** Pre-aggregated data for analytics and reporting dashboards, this alos helps to protect the raw database data from loss or missuse. I created three views, one to track the monthly company perfomance, the other to track the monthly website traffic, and the third one to track the website session in january and february.
-  To create the the `CREATE VIEW ` statement was used, and is detailed in the script `Views.sql` [**(View Script)**](https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20scripts/Views.sql), a a screenshot of the query from the script is shown below:
-
-<div align="center">
-  <img src="https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20Scripts%20Screenshorts/Creating%20Views.png" alt="Creating View Query Screenshot">
-  
-*Figure 4: proper caption.*
-</div>
-
-
-## 🔐 Backups & Security
-
-To protect company data I:
-
-- I enforced Access control with user roles and permissions
-  
-- I created the companies Full database backups were using MySQL dump (this is done on the UI) which is a type of logical backup that generates a sql sript tht when you run it it creates/recreates/produces the full database. See the back up script I for the company that was produced my the mySQL dump (`NovaCart Retail mysql-dump database backup.sql`) [**(See Backup Script)**](https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/Backups/NovaCart%20Retail%20mysql-dump%20batabase%20backup.sql)
-  Below is a screenshot of a portion of the logical backup script (`NovaCart Retail mysql-dump database backup.sql`):
-
-<div align="center">
-  <img src="https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20Scripts%20Screenshorts/MySQL%20dump%20backup.png" alt="MySQL Dump Script Screenshot">
-  
-*Figure 4: proper caption.*
-</div>
-  
-- I wrote Advisory articles written for stakeholders on security and data loss mitigation. See the [**Risks of Data Loss Advisory Article**](https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/EER%20diagrams%20and%20documentation/Risks%20of%20Data%20Loss%20Advisory%20Article%20to%20Stackholders.pdf)  and the [**Security Advisory Article**](https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/EER%20diagrams%20and%20documentation/Security%20Advisory%20Article%20to%20Stackholders.pdf)
-
-<div align="left">
-  <img src="https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20Scripts%20Screenshorts/Data%20Loss%20Risks%20and%20Mitigation%20Strategies.png" alt="Data Loss Article Screenshot">
-  
-*Figure 4: proper caption.*
-</div>
-
-<div align="right">
-  <img src="https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20Scripts%20Screenshorts/Creating%20a%20Comprehensive%20Security%20Plan%20for%20the%20Company.png" alt="Security Plan Article Screenshot">
-  
-*Figure 4: proper caption.*
-</div>
-
-(I want these articles pictures to be side by side)
-
-
 # 🏗️ Database Structure, Automation & Security
 
 ## 1️⃣ Designing the Database Schema
@@ -285,7 +176,7 @@ To automate inventory updates, I created a trigger that **automatically adjusts 
 <div align="center">
   <img src="https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20Scripts%20Screenshorts/Creating%20Trigger.png">
 
-  **Figure 6:** Stock control trigger implementation.
+  **Figure 6:** Stock control trigger implementation from `Triggers.sql`.
 
 </div>
 
@@ -297,6 +188,7 @@ To automate inventory updates, I created a trigger that **automatically adjusts 
 ### 🔵 Views
 
 To support analytics dashboards and reporting tools, I created three views:
+<div align="center">
 
 | View Name | Purpose |
 |-----------|---------|
@@ -304,11 +196,15 @@ To support analytics dashboards and reporting tools, I created three views:
 | Website Traffic View | Monitors changes in incoming traffic |
 | Jan-Feb Session View | Focused analysis of early-year web activity |
 
-<p align="center">
+</div>
+<div align="center">
   <img src="https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20Scripts%20Screenshorts/Creating%20Views.png">
-</p>
 
-**Figure 7:** SQL used to create analytics views.
+**Figure 7:** One of the query used to create analytics view from `Views.sql`.
+
+
+</div>
+
 
 🔗 **View Script:** [`Views.sql`](https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20scripts/Views.sql)
 
@@ -316,7 +212,7 @@ To support analytics dashboards and reporting tools, I created three views:
 
 ## 4️⃣ Database Security & Backups
 
-To ensure long-term protection of company data, I implemented:
+To ensure long-term protection of company's data, I implemented:
 
 ### 🔐 Access Control  
 Role-based permissions for admins, analysts, and developers.
@@ -325,12 +221,12 @@ Role-based permissions for admins, analysts, and developers.
 ### 💾 Automated Logical Backups
 
 I generated a full logical backup using MySQL Workbench’s export tool (`mysqldump`).  
-This produces a script that can fully rebuild the database on any MySQL server.
+This produces a SQL script that can fully rebuild the company's database on any MySQL server.
 
 <div align="center">
   <img src="https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20Scripts%20Screenshorts/MySQL%20dump%20backup.png">
 
-**Figure 8:** Excerpt of exported backup script.
+**Figure 8:** Excerpt of exported backup script from `NovaCart Retail mysql-dump database backup.sql`.
 
 </div>
 
@@ -344,30 +240,81 @@ This produces a script that can fully rebuild the database on any MySQL server.
 To ensure stakeholders understood the importance of database safety, I wrote two advisory articles:
 
 - 🔒 **Creating a Comprehensive Security Plan for the Company**  
-- 🛑 **Data Loss Risk & Mitigation Strategies**
+- 🛑 **Data Loss Risks & Mitigation Strategies**
+<div align="center">
 
 | Security Advisory | Risk Mitigation Advisory |
 |------------------|--------------------------|
 | ![](https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20Scripts%20Screenshorts/Creating%20a%20Comprehensive%20Security%20Plan%20for%20the%20Company.png) | ![](https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/blob/main/SQL%20Scripts%20Screenshorts/Data%20Loss%20Risks%20and%20Mitigation%20Strategies.png) |
 
-**Figure 9:** Advisory article previews (side-by-side screenshots).
+**Figure 9:** Advisory article previews (side-by-side screenshots), please click below to see the full documents.
+
+</div>
 
 📄 **Both full PDFs are located in:** [`/EER diagrams and documentation/`](https://github.com/ValenLebepe/from-spreadsheets-to-SQL-database-modernizing-a-growing-company/tree/main/EER%20diagrams%20and%20documentation)
 
 
 
-## ⭐ Final Outcome
+## 🏁 Final Outcome & Impact
 
-By migrating the business from static spreadsheets to a **fully relational, automated, secure SQL database**, the company now has:
+The migration project successfully transformed the company’s operational data from scattered Excel spreadsheets into a **fully relational, secure, and scalable MySQL database system**.
 
-- Centralized and structured data
-- Automated analytics and reporting
-- Built-in data protection and backup capability
-- Executive-level documentation for long-term governance
+This resulted in tangible operational improvements, including:
 
-This project brings the company one step closer to scalable dashboards, predictive analytics, and expanded digital operations.
+### 🚀 1️⃣ Centralized & Structured Data
+- All business information - orders, summaries, products, refunds, sessions, and support; now exists in **one unified database**  
+- Eliminated duplicated values and inconsistent spreadsheet versions  
+- Enabled **real-time SQL queries** instead of manual spreadsheet filtering  
 
+**Before:** 23+ spreadsheets manually updated  
+**After:** 1 relational database with automated data integrity enforcement
 
+### 📊 2️⃣ Analytics-Ready Architecture
+Thanks to **views, stored procedures, and relational table design**, the company can now:
+- Track revenue and refunds monthly  
+- Measure website user behavior  
+- Monitor chat support performance  
+- Build dashboards without rewriting queries every month  
+
+This database is now **BI-ready**, meaning it can connect directly to tools like **Power BI, Tableau, or Looker**.
+
+### ⚡ 3️⃣ Automated Data Logic
+- Stock levels update automatically through **SQL triggers**  
+- No manual stock reconciliation needed after sales  
+- Eliminated human error and reduced update time to zero seconds
+
+### 🔐 4️⃣ Enterprise-Level Security & Backup Strategy
+- **Access roles** restrict who can read, write, and modify different tables  
+- **Full logical backups** allow the entire database to be restored in minutes  
+- Two internal advisory reports were delivered to executives covering:
+  - Data Loss Risk Mitigation  
+  - Security Strategy Implementation  
+
+These allow decision-makers to understand not just what was built, but **how to protect it going forward**.
+
+### 🧩 5️⃣ Smooth & Lossless Migration
+- No data was altered, lost, or corrupted during migration  
+- All original spreadsheets were preserved and archived in the repository  
+- Every row successfully imported into its relational destination table
+
+### 🎯 Business Value Delivered
+
+| Outcome                 | Business Impact                     |
+|-------------------------|------------------------------------|
+| Unified SQL Database    | Replaces spreadsheet chaos         |
+| Automated Reporting     | Eliminates manual monthly work     |
+| Real-Time Metrics       | Enables faster decision-making     |
+| Data Security Plan      | Reduces operational risk           |
+| Scalable Structure      | Supports future BI dashboards      |
+
+### 🏆 Project Summary
+This project modernized a growing retail company’s data infrastructure by replacing unstructured spreadsheets with a **secure, relational SQL database** designed for analytics, automation, and scalability.
+
+The company now has:
+- A production-ready MySQL database  
+- Clean, well-structured historical data  
+- Built-in automation and protection features  
+- A foundation for future predictive analytics & BI dashboards
 
 
 
